@@ -5,3 +5,6 @@ class acceptor:
         self.srs = srs
         self.decider = decider
         self.observer = observer
+        
+    def check_validity(self):
+        pass
