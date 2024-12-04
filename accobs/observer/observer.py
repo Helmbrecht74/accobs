@@ -13,3 +13,6 @@ class observer:
         for symbol in string:
             current_state = self.transitions[current_state][symbol]
         return self.output[current_state]
+    
+    def output_alphabet(self):
+        return frozenset(self.output.values())
