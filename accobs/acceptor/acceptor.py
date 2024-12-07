@@ -7,12 +7,12 @@ class acceptor:
         self.observer = observer
         
     def check_validity(self):
-        self.validity_obs_dec()
-        pass
+        return self.validity_obs_dec() and self.validity_srs_obs()
+        
     
     def validity_obs_dec(self):
         return self.observer.output_alphabet() == self.decider.alphabet
     
     def validity_srs_obs(self):
-        # checks whether alphabet of SRS is input of observer
+        return self.srs.alphabet == self.observer.alphabet
         pass
