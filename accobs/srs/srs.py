@@ -27,3 +27,8 @@ class srs:
                         resulting_strings.add( base_string[:position] + right_hand_side 
                                               + base_string[position+1:] )
         return resulting_strings
+    
+    
+    def terminating_symbols(self):
+        # works only for painter and CF systems
+        return self.alphabet - self.srs.rule_set.keys()
