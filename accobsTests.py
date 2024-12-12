@@ -63,6 +63,12 @@ print(de.run_on_string('aababbaa'))
 
 from accobs.acceptor.acceptor import acceptor as acceptor
 
-accs = acceptor(5, de, ob) 
+rules = {  
+    'a' : { 'bb' , 'c' },
+    'b' : { 'cc' }
+    }
 
-print("Und " , accs.validity_obs_dec())
+rw = SRS( rules )
+
+accs = acceptor(rw, de, ob) 
+accs.run_on_string("aaa")
