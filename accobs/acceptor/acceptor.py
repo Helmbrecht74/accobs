@@ -8,6 +8,7 @@ class acceptor:
         
     
     def run_on_string(self, input_string):
+        # simulate the system's run on the string provided
         strings_already_processed = set()
         strings_not_yet_processed = { input_string }
         j = 0
@@ -30,12 +31,15 @@ class acceptor:
         
     
     def check_validity(self):
+        # make sure all componnents have corresponding interfaces (alphabets)
         return self.validity_obs_dec() and self.validity_srs_obs()
         
     
     def validity_obs_dec(self):
+        # observer / decider interface
         return self.observer.output_alphabet() == self.decider.alphabet
     
     def validity_srs_obs(self):
+        # String-Rewriting / observer interface
         return self.srs.alphabet == self.observer.alphabet
         pass

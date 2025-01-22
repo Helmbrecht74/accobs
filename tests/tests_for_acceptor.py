@@ -13,7 +13,7 @@ from accobs.srs.srs import srs as SRS
 
 
 rules = {  
-    'a' : { 'bb' , 'c' },
+    'a' : { 'bb' , 'cc' },
     'b' : { 'cc' }
     }
 
