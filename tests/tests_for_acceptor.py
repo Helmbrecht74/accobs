@@ -33,6 +33,7 @@ outputf = { 'q1' : 'a', 'q2' : 'b' }
 
 ob = obs( states, alph, transitions, outputf,  'q1' )
 
+# next
 
 from accobs.decider.decider import decider as deci 
 
@@ -46,6 +47,8 @@ outputf = { 'q1' : 'A', 'q2' : 'B' }
 
 de = deci( states, alph, transitions, {'q2'}, 'q1')
 
+
+# other scenario
 
 from accobs.acceptor.acceptor import acceptor as acceptor
 
