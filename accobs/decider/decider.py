@@ -10,12 +10,18 @@ class decider:
         self.states_without_exit = set()
         
     def run_on_string(self, string):
+        """
+        Simulate the system's run on the string provided.
+        """
         current_state = self.intial_state
         for symbol in string:
             current_state = self.transitions[current_state][symbol]
         return current_state in self.final_states
             
     def one_step(self, symbol, current_state):
+        """
+        Single step of the simulation
+        """
         return self.transitions[current_state][symbol]
 
     def state_is_life(self, state):
