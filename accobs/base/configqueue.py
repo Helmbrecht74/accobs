@@ -27,4 +27,5 @@ class ConfigQueue:
 
         """
         for element in self._queue:
+            pass
             
