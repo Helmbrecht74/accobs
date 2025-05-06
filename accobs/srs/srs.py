@@ -3,6 +3,14 @@
 
 
 class srs:
+    """
+    Provides methods to simulate a string-rewriting system.
+    The rule set is passed to the constructor in the form
+    of a dictionary, where the keys are the left-hand sides
+    of the rewrite rules; the right-hand sides are represented
+    by sets of strings, which contain all possible right-hand
+    sides for the given left-hand side.
+    """
   
     def __init__( self, rule_set, alphabet = set() ):
         self.rule_set = rule_set
@@ -11,6 +19,9 @@ class srs:
         self.current_string = ""
 
     def set_start_string( self, start_string ):
+        """
+        Sets the start string for simulations.
+        """
         self.current_string = start_string
         
     def move_one( self, start_string = None ):
