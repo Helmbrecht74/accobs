@@ -17,3 +17,10 @@ class StateFormatError(AccobsError):
     Base class for error from accobs package.
     """
     pass
+
+
+class ConfigStringError(AccobsError):
+    """
+    Base class for error from accobs package.
+    """
+    pass

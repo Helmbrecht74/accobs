@@ -15,7 +15,7 @@ class ConfigQueue:
     def __init__(self):
         self._queue = []
         
-    def insert(self, configuration):
+    def insert(self, new_configuration):
         """
         Parameters
         ----------
