@@ -22,8 +22,13 @@ class ConfigurationParser(Exception):
             raise ConfigStringError("The string does not represent a configuration.")
         return parsed_list
     
-s="abq1q22e33rtz4r"
-s="ab.q1q22e33rtz4r"
+    @staticmethod
+    def config_to_string( config ):
+        return "".join( config )
+            
+    
+# s="abq1q22e33rtz4r"
+# s="ab.q1q22e33rtz4r"
 
-print(ConfigurationParser.parse_string(s))
+# print(ConfigurationParser.parse_string(s))
 
