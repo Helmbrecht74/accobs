@@ -43,3 +43,24 @@ class srs:
     def terminating_symbols(self):
         # works only for painter and CF systems
         return self.alphabet - self.srs.rule_set.keys()
+    
+    def is_painter( self ):
+        """
+        Tests if the rule set contains only painter rules.
+        """
+        if ( max( map(len, self.rule_set.keys() )) == 1
+                and max( map(len, self.rule_set.values() )) == 1 
+                ):
+            return True
+        return False
+    
+    
+    def is_cf( self ):
+        """
+        Tests if the rule set contains only context-free rules.
+        """
+        if ( max( map(len, self.rule_set.keys() )) == 1
+                and min( map(len, self.rule_set.values() )) == 1 
+                ):
+            return True
+        return False
