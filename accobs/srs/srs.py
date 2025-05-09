@@ -25,6 +25,9 @@ class srs:
         self.current_string = start_string
         
     def move_one( self, start_string = None ):
+        """
+        Simulates a single step, all possibilities.
+        """
         if start_string == None:
             base_string = self.current_string
         else:
