@@ -7,7 +7,7 @@ Provides a class for configuration of observer systems
 
 class Configuration:
     """
-    dddbc
+    string
     """
     def __init__(self, srs_string, obs_string):
         self._srs_string = srs_string
