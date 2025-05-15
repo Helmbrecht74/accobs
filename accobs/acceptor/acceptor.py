@@ -41,10 +41,16 @@ class acceptor:
         
     
     def validity_obs_dec(self):
-        # observer / decider interface
+        """
+        Checks if the observer's output alphabet coincides with
+        the decider's input alphabet.
+        """
         return self.observer.output_alphabet() == self.decider.alphabet
     
     def validity_srs_obs(self):
-        # String-Rewriting / observer interface
+        """
+        Checks if the observer's input alphabet coincides with
+        the string-rewriting system's alphabet.
+        """
         return self.srs.alphabet == self.observer.alphabet
         pass
