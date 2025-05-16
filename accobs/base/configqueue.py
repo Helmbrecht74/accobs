@@ -29,3 +29,16 @@ class ConfigQueue:
         for element in self._queue:
             pass
             
+     
+    def next_config(self):
+        """
+        Parameters
+        ----------
+        configuration : a Configuration instance
+
+        Returns
+        -------
+        None.
+
+        """
+        return None
