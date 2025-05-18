@@ -28,6 +28,7 @@ class ConfigQueue:
         """
         for element in self._queue:
             pass
+            pass
             
      
     def next_config(self):
