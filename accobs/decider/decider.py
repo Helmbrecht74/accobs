@@ -1,6 +1,10 @@
 
 
 class decider:
+    """
+    
+    """
+    
     def __init__(self, state_set, alphabet, transitions, final_states, initial_state):
         self.state_set = frozenset(state_set)
         self.alphabet = frozenset(alphabet)
@@ -32,3 +36,9 @@ class decider:
     
     def set_state_without_exit(self, state):
         self.states_without_exit.add(state)
+        
+   
+    def _find_states_without_exit(self):
+        for state in self.state_set:
+            
+            self.states_without_exit.add(state)

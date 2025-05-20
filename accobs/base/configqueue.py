@@ -26,8 +26,9 @@ class ConfigQueue:
         None.
 
         """
-        for element in self._queue:
-            pass
+        for i, element in enumerate(self._queue):
+            if new_configuration < element:
+                self._queue[i,i]
             pass
             
      
