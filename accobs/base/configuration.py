@@ -7,7 +7,8 @@ Provides a class for configuration of observer systems
 
 class Configuration:
     """
-    string
+    A configuration consists of the string on which the SRS works
+    and of the observation thus far.
     """
     def __init__(self, srs_string, obs_string):
         self._srs_string = srs_string
@@ -15,9 +16,10 @@ class Configuration:
         
     def __lt__(self, other): 
         """
-        Para
+        Configurations are ordered first by the length of the computation thus far,
+        then by first length then string order on the SRS part
         """
-        difference_in_length = len( other.get_obs() ) - len( self._obs_string ) 
+        difference_in_length = len( other.get_obs() ) - len( self.get_obs() ) 
         if difference_in_length > 0:
             return True
         elif (difference_in_length == 0 
