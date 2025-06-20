@@ -5,13 +5,15 @@
 Provides a class for configuration of observer systems
 """
 
-class Configuration:
+import SRS_string
+
+class Obs_Sys_Configuration:
     """
     A configuration consists of the string on which the SRS works
     and of the observation thus far.
     """
     def __init__(self, srs_string, obs_string):
-        self._srs_string = srs_string
+        self._srs_string = SRS_string(srs_string)
         self._obs_string = obs_string
         
     def __lt__(self, other): 
@@ -23,7 +25,7 @@ class Configuration:
         if difference_in_length > 0:
             return True
         elif (difference_in_length == 0 
-              and self._srs_string < other.get_srs_conf() ):
+              and self._srs_string.get_string() < other.get_srs_conf() ):
             return True
         return False
     
@@ -32,7 +34,7 @@ class Configuration:
         Para
         """
         if (self._obs_string   == other.get_obs() 
-              and self._srs_string == other.get_srs_conf() ):
+              and self._srs_string.get_string() == other.get_srs_conf() ):
             return True
         return False
             
@@ -47,4 +49,4 @@ class Configuration:
         """
         Para
         """  
-        return self._srs_string           
+        return self._srs_string.get_string()       
