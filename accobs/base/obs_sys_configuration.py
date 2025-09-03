@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-Provides a class for configuration of observer systems
+Provides a class for configuration of observer systems.
+The configuration consists of the string of observations up to the current
+point and the current string of the SRS.
 """
 
 import SRS_string
