@@ -7,9 +7,12 @@ class acceptor:
         self.observer = observer
         
     
-    def run_on_string(self, input_string):
+    def run_on_string(self, input_string, max_steps = 1000):
         """
         Simulate the system's run on the string provided.
+        The maximal depth of the computation (number of steps) is max_steps.
+        Because of the width of the computation tree, many more steps overall
+        can be computed.
         """
         strings_already_processed = set()
         strings_not_yet_processed = { input_string }

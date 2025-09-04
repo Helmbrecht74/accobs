@@ -5,6 +5,9 @@
 Provides a class for configuration of observer systems.
 The configuration consists of the string of observations up to the current
 point and the current string of the SRS.
+The class facilitates comparison via = and < where the order is
+   1. by the length of the observation / computation
+   2. by the SRS string
 """
 
 import SRS_string
@@ -33,7 +36,7 @@ class Obs_Sys_Configuration:
     
     def __eq__(self, other): 
         """
-        Para
+        Equality check on both components
         """
         if (self._obs_string   == other.get_obs() 
               and self._srs_string.get_string() == other.get_srs_conf() ):
@@ -43,12 +46,12 @@ class Obs_Sys_Configuration:
    
     def get_obs(self): 
         """
-        Para
+        Getter for observation
         """ 
         return self._obs_string
         
     def get_srs_conf(self): 
         """
-        Para
+        Getter for SRS string
         """  
         return self._srs_string.get_string()       
