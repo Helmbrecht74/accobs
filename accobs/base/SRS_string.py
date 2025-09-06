@@ -8,8 +8,7 @@ Created on Fri Jun 20 13:53:33 2025
 
 class SRS_String:
     """
-    A configuration consists of the string on which the SRS works
-    and of the observation thus far.
+    A string for the SRS is just a normal string, but with a different order function.
     """
     def __init__(self, srs_string):
         self._srs_string = srs_string

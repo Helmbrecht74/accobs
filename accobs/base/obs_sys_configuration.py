@@ -8,9 +8,10 @@ point and the current string of the SRS.
 The class facilitates comparison via = and < where the order is
    1. by the length of the observation / computation
    2. by the SRS string
+The class facilitates access to the SRS string via indexing
 """
 
-import SRS_string
+import base.SRS_string
 
 class Obs_Sys_Configuration:
     """
@@ -18,7 +19,7 @@ class Obs_Sys_Configuration:
     and of the observation thus far.
     """
     def __init__(self, srs_string, obs_string):
-        self._srs_string = SRS_string(srs_string)
+        self._srs_string = base.SRS_string.SRS_String(srs_string)
         self._obs_string = obs_string
         
     def __lt__(self, other): 
@@ -42,6 +43,12 @@ class Obs_Sys_Configuration:
               and self._srs_string.get_string() == other.get_srs_conf() ):
             return True
         return False
+    
+    def __getitem__(self, index):
+        """
+        Equality check on both components
+        """
+        return self._obs_string[index]
             
    
     def get_obs(self): 

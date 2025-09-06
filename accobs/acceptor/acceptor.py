@@ -1,5 +1,7 @@
 
 
+from accobs.base import exceptions, obs_sys_configuration 
+
 class acceptor:
     def __init__(self, srs, decider, observer):
         self.srs = srs
@@ -14,23 +16,23 @@ class acceptor:
         Because of the width of the computation tree, many more steps overall
         can be computed.
         """
-        strings_already_processed = set()
-        strings_not_yet_processed = { input_string }
-        j = 0
-        while bool( strings_not_yet_processed ):
-            if j > 22: break
-            j += 1
-            current_string = strings_not_yet_processed.pop()
-            strings_already_processed.add(current_string)
-            print("Popped:   ", current_string)
-            print(strings_not_yet_processed)
-            for position in range( len( current_string ) ) :
+        initial_config = obs_sys_configuration ( input_string, "" )
+        configs_already_processed = set()
+        configs_not_yet_processed = { initial_config }
+
+        while bool( configs_not_yet_processed ):
+
+            current_config = configs_not_yet_processed.pop()
+            configs_already_processed.add(current_config)
+            print("Popped:   ", current_config)
+            print(configs_not_yet_processed)
+            for position in range( len( current_config ) ) :
                 # print(current_string[:position] + '-e-'  + current_string[position+1:])
-                new_string = current_string[:position] + 'e'  + current_string[position+1:]
-                if new_string not in strings_already_processed: 
-                    strings_not_yet_processed.add(new_string)
-            print(strings_not_yet_processed)
-            print(strings_already_processed)
+                new_config = current_config[:position] + 'e'  + current_config[position+1:]
+                if new_config not in configs_already_processed: 
+                    configs_not_yet_processed.add(new_config)
+            print(configs_not_yet_processed)
+            print(configs_already_processed)
             print("    --------------     ")
             
                 
