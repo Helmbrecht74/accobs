@@ -5,9 +5,13 @@
 Provides a class for configuration of observer systems.
 The configuration consists of the string of observations up to the current
 point and the current string of the SRS.
-The class facilitates comparison via = and < where the order is
+The class facilitates comparison via == and < where the order is
    1. by the length of the observation / computation
    2. by the SRS string
+Note that < and > can both result in False, while == also results in False,
+if the observations are of equal lengths but different, while the SRS strings 
+are the same.
+  
 The class facilitates access to the SRS string via indexing
 """
 
@@ -49,6 +53,13 @@ class Obs_Sys_Configuration:
         Equality check on both components
         """
         return self._obs_string[index]
+    
+    def __str__(self):
+        """
+        Formatting to string
+        """
+        return ("SRS: " + self._obs_string 
+                + ";  observation: " + self._srs_string.get_string())
             
    
     def get_obs(self): 
