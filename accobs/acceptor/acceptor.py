@@ -35,6 +35,14 @@ class acceptor:
             print(configs_already_processed)
             print("    --------------     ")
             
+    def generate_rule_sites(self, input_string):
+        """
+        where a rule r of the SRS can be applies to the input_string
+        """
+        list_of_sites = []
+        
+        return list_of_sites
+            
                 
         
     
