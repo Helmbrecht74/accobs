@@ -26,23 +26,16 @@ class acceptor:
             configs_already_processed.add(current_config)
             print("Popped:   ", current_config)
             print(configs_not_yet_processed)
-            for position in range( len( current_config ) ) :
-                # print(current_string[:position] + '-e-'  + current_string[position+1:])
-                new_config = current_config[:position] + 'e'  + current_config[position+1:]
+            for new_string in self.srs.move_one(current_config.get_srs_conf()):
+                new_observation = current_config.get_obs() + self.observer.run_on_string(new_string)
+                new_config = obs_sys_configuration ( new_string, new_observation )
                 if new_config not in configs_already_processed: 
                     configs_not_yet_processed.add(new_config)
             print(configs_not_yet_processed)
             print(configs_already_processed)
             print("    --------------     ")
             
-    def generate_rule_sites(self, input_string):
-        """
-        where a rule r of the SRS can be applies to the input_string
-        """
-        list_of_sites = []
-        
-        return list_of_sites
-            
+    
                 
         
     
