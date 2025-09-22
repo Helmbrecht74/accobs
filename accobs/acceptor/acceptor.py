@@ -8,6 +8,12 @@ class acceptor:
         self.decider = decider
         self.observer = observer
         
+        if not self.validity_obs_dec():
+            raise exceptions.AlphabetsIncompatibleError("Observer output alphabet not equal to decider input alphabet.")
+        
+        if not self.validity_srs_obs():
+            raise exceptions.AlphabetsIncompatibleError("SRS alphabet not equal to observer input alphabet.")
+        
     
     def run_on_string(self, input_string, max_steps = 1000):
         """
