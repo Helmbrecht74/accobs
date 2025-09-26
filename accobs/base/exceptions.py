@@ -24,3 +24,9 @@ class ConfigStringError(AccobsError):
     Base class for error from accobs package.
     """
     pass
+
+class AlphabetsIncompatibleError(AccobsError):
+    """
+    Base class for error from accobs package.
+    """
+    pass
